@@ -1,35 +1,63 @@
-// Navbar.jsx
-import React, { useRef } from 'react';
-import './tryCss.css'
+import React from "react";
+import { useRef } from "react";
+
+import "./tryCss.css";
 
 const Navbar = () => {
-  const homeRef = useRef(null);
   const aboutRef = useRef(null);
+  const experienceRef = useRef(null);
+  const projectsRef = useRef(null);
+  const contactRef = useRef(null);
 
   const scrollToSection = (ref) => {
-    ref.current.scrollIntoView({ behavior: 'smooth' });
+    ref.current.scrollIntoView({ behaviour: "smooth" });
   };
-
   return (
-    <nav>
-      <ul>
-        <li onClick={() => scrollToSection(homeRef)}>Home</li>
-        <li onClick={() => scrollToSection(aboutRef)}>About</li>
-      </ul>
-      <p>Scroll down to: Home or About</p>
+    <div>
+      <nav>
+        <div>Logo</div>
+        <ul className="nav-links">
+          <li
+            onClick={() => {
+              scrollToSection(aboutRef);
+            }}
+            className="nav-item"
+          >
+            About
+          </li>
+          <li
+            onClick={() => {
+              scrollToSection(experienceRef);
+            }}
+            className="nav-item"
+          >
+            Experience
+          </li>
+          <li
+            onClick={() => {
+              scrollToSection(projectsRef);
+            }}
+            className="nav-item"
+          >
+            Projects
+          </li>
+          <li
+            onClick={() => {
+              scrollToSection(contactRef);
+            }}
+            className="nav-item"
+          >
+            Contact
+          </li>
+        </ul>
+      </nav>
 
-      <div ref={homeRef} className="section">
-        <h2>Home Section</h2>
-        {/* Your home section content */}
-      </div>
-
-      <div ref={aboutRef} className="section">
-        <h2>About Section</h2>
-        {/* Your about section content */}
-      </div>
-    </nav>
+      <section ref={aboutRef}>About</section>
+      <section ref={experienceRef}>Experience</section>
+      <section ref={projectsRef}>Projects</section>
+      <section ref={contactRef}>Contact</section>
+    </div>
   );
 };
 
 export default Navbar;
-
