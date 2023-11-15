@@ -7,8 +7,6 @@ import Projects from "./Projects";
 import Home from "./Home";
 import Navbar from "./Navbar";
 
-
-
 const Hero = () => {
   const aboutRef = useRef(null);
   const experienceRef = useRef(null);
@@ -27,7 +25,7 @@ const Hero = () => {
         projectsRef={projectsRef}
         contactRef={contactRef}
       />
-      <Home/>
+      <Home scrollToSection={scrollToSection} contactRef={contactRef} />
       <About aboutRef={aboutRef} />
       <Projects projectsRef={projectsRef} />
       <Contact contactRef={contactRef} />
