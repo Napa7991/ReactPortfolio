@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Times New Roman', Times, serif;
+}
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 2.5rem;
+    height: 15vh;
+}
+.nav-links{
+    display: flex;
+    list-style: none;
+    gap:3rem;
+}
+.nav-item{
+    cursor: pointer;
+}
+.nav-item:hover{
+    color:grey;
+}
+
+
+/* for section */
+section{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+}
